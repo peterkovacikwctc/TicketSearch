@@ -24,11 +24,17 @@ namespace ticketing_system_oop
                     // read data from file
                     if (File.Exists(file))
                     {
+                        display.ticketListMessage();
 
+                        StreamReader sr = new StreamReader(file);
+                        while (!sr.EndOfStream)
+                        {
+                            
+                        }
                     }
                     else
                     {
-                        display.fileNotExist();
+                        display.fileNotExistMessage();
                     }
                }
                

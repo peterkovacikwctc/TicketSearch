@@ -13,8 +13,16 @@ namespace ticketing_system_oop
             Console.WriteLine("Enter any other key to exit.");
         }
 
-        public void fileNotExist() {
+        public void fileNotExistMessage() {
             Console.WriteLine("\nFile does not exist.");
+        }
+
+        public void exitMessage() {
+            Console.WriteLine("Goodbye.\n");
+        }
+
+        public void ticketListMessage() {
+              Console.WriteLine("\nList of Tickets\n");
         }
     }
 }
