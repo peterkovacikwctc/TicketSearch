@@ -24,5 +24,11 @@ namespace ticketing_system_oop
         public void ticketListMessage() {
               Console.WriteLine("\nList of Tickets\n");
         }
+
+        public void displayTicketInfo(Ticket ticket) {
+
+        }
+
+       
     }
 }
