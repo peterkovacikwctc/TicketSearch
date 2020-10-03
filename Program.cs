@@ -63,9 +63,8 @@ namespace ticketing_system_oop
                             if (response != "Y") { break; }
 
                             Ticket ticket = new Ticket();
-                            ticket = ticketManager.elicitTicketInformation();
+                            ticket = ticketManager.elicitTicketInformation(file);
                             ticketManager.addTicketToFile(file, ticket);
-                            Console.WriteLine("");
 
                         } while (response == "Y");
                 }

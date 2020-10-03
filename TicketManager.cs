@@ -1,17 +1,18 @@
 using System;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ticketing_system_oop
 {
     public class TicketManager
     {
-        public Ticket elicitTicketInformation() {
+        public Ticket elicitTicketInformation(string file) {
             
             Ticket ticket = new Ticket();
 
             // TicketID
-            Console.WriteLine("What is the ticket ID?");
-            ticket.ticketID = Console.ReadLine();
+            ticket.ticketID = calculateTicketID(file);
 
             // Summary
             Console.WriteLine("What is the summary?");
@@ -79,6 +80,31 @@ namespace ticketing_system_oop
             ticket.watching3 = ticketElements[8];
 
             return ticket;
+        }
+
+        // calculate ticket based on highest number ticket already in system
+        private string calculateTicketID(string file) {
+            
+            // make list of ticket IDs
+            List<UInt64> ticketIds = new List<UInt64>();
+            
+            StreamReader sr = new StreamReader(file);
+    
+            // skip first line
+            sr.ReadLine();
+
+            // go through file to populate list of IDs
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                string[] ticketElements = line.Split(',', '|');
+                ticketIds.Add(UInt64.Parse(ticketElements[0]));
+            }
+            sr.Close();
+
+            // find max ID value in ID list and add 1 to current ticket
+            UInt64 ticketID = ticketIds.Max() + 1;
+            return (ticketID.ToString()); 
         }
     }
 }
