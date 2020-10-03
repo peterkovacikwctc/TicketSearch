@@ -35,10 +35,10 @@ namespace ticketing_system_oop
                         
                         while (!sr.EndOfStream)
                         {
-                            Ticket ticket1 = new Ticket();
+                            Ticket ticket = new Ticket();
                             line = sr.ReadLine();
-                            ticket1 = ticketManager.readTicketInformation(line);
-                            display.displayTicketInfo(ticket1);
+                            ticket = ticketManager.readTicketInformation(line);
+                            display.displayTicketInfo(ticket);
                         }
                         sr.Close();
                     }
@@ -51,22 +51,23 @@ namespace ticketing_system_oop
                 // add Data to File
                 else if (menuChoice == "2") 
                 {
-                    StreamWriter sw = new StreamWriter(file, append: true);
+                    //StreamWriter sw = new StreamWriter(file, append: true);
 
                     string response;
                         do 
                         {
-                            response = ticketManager.shouldEnterTicket();
+                            display.shouldEnterTicket();
+                            response = Console.ReadLine().ToUpper();
                             
                             // end loop if not adding ticket
                             if (response != "Y") { break; }
 
-                            Ticket ticket2 = new Ticket();
-                            ticket2 = ticketManager.elicitTicketInformation(ticket2);
-                            ticketManager.addTicketToFile(ticket2);
+                            Ticket ticket = new Ticket();
+                            ticket = ticketManager.elicitTicketInformation();
+                            ticketManager.addTicketToFile(file, ticket);
+                            Console.WriteLine("");
 
                         } while (response == "Y");
-                        //sw.Close();
                 }
             } while (menuChoice == "1" || menuChoice == "2");
 

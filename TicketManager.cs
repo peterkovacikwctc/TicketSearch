@@ -5,76 +5,80 @@ namespace ticketing_system_oop
 {
     public class TicketManager
     {
-        public Ticket elicitTicketInformation(Ticket ticket) {
-            // get ticket info from user and write to ticket
+        public Ticket elicitTicketInformation() {
             
-            // ---------------------------
-            
-            /*
+            Ticket ticket = new Ticket();
+
             // TicketID
             Console.WriteLine("What is the ticket ID?");
-            string ticketID = Console.ReadLine();
+            ticket.ticketID = Console.ReadLine();
 
             // Summary
             Console.WriteLine("What is the summary?");
-            string summary = Console.ReadLine();
+            ticket.summary = Console.ReadLine();
             
             // Status
             Console.WriteLine("What is the status?");
-            string status = Console.ReadLine();
+            ticket.status = Console.ReadLine();
             
             // Priority
             Console.WriteLine("What is the priority?");
-            string priority = Console.ReadLine();
+            ticket.priority = Console.ReadLine();
             
             // Submitter
             Console.WriteLine("Who is the submitter?");
-            string submitter = Console.ReadLine();
+            ticket.submitter = Console.ReadLine();
             
             // Assigned
             Console.WriteLine("Who is assinged?");
-            string assigned = Console.ReadLine();
+            ticket.assigned = Console.ReadLine();
             
             // Watching 1
             Console.WriteLine("Who is the first person watching?");
-            string watching1 = Console.ReadLine();
+            ticket.watching1 = Console.ReadLine();
             
             // Watching 2
             Console.WriteLine("Who is the second person watching?");
-            string watching2 = Console.ReadLine();
+            ticket.watching2 = Console.ReadLine();
             
             // Watching 3
             Console.WriteLine("Who is the third person watching?");
-            string watching3 = Console.ReadLine();
-            */
+            ticket.watching3 = Console.ReadLine();
             
             return ticket;
         }
 
-        public void addTicketToFile(Ticket ticket) {
-            /*
+        public void addTicketToFile(string file, Ticket ticket) {
+            
             StreamWriter sw = new StreamWriter(file, append: true);
 
             // write line to file
             sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}|{7}|{8}", 
-            ticketID, summary, status, priority, submitter, assigned, 
-            watching1, watching2, watching3);
+            ticket.ticketID, ticket.summary, ticket.status, ticket.priority, 
+            ticket.submitter, ticket.assigned, ticket.watching1, 
+            ticket.watching2, ticket.watching3);
 
-            // add line for formatting 
-            Console.WriteLine("");
-            sw.Close();  
-            */        
+            sw.Close();                     
         }
 
         public Ticket readTicketInformation(string line) {
+            
+            // convert line of data from file into array
+            string[] ticketElements = line.Split(',', '|');
+            
+            // make new ticket and give it data
             Ticket ticket = new Ticket();
+            ticket.ticketID = ticketElements[0];
+            ticket.summary = ticketElements[1];
+            ticket.status = ticketElements[2];
+            ticket.priority = ticketElements[3];
+            ticket.submitter = ticketElements[4];
+            ticket.assigned = ticketElements[5];
+            ticket.watching1 = ticketElements[6];
+            ticket.watching2 = ticketElements[7];
+            ticket.watching3 = ticketElements[8];
 
             return ticket;
-        }
-
-        public string shouldEnterTicket() {
-            Console.WriteLine("\nEnter a ticket (Y/N)?");
-            return Console.ReadLine().ToUpper();
         }
     }
 }

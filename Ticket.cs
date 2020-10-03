@@ -23,7 +23,13 @@ namespace ticketing_system_oop
         public string assigned 
         { get; set; }
 
-        public string watching 
+        public string watching1 
+        { get; set; }
+
+        public string watching2 
+        { get; set; }
+
+        public string watching3 
         { get; set; }
     }
 }
