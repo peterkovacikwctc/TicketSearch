@@ -51,8 +51,6 @@ namespace ticketing_system_oop
                 // add Data to File
                 else if (menuChoice == "2") 
                 {
-                    //StreamWriter sw = new StreamWriter(file, append: true);
-
                     string response;
                         do 
                         {

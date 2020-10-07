@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ticketing_system_oop
 {
-    public class Ticket
+    public abstract class Ticket
     {
         public string ticketID 
         { get; set; }
@@ -23,13 +23,7 @@ namespace ticketing_system_oop
         public string assigned 
         { get; set; }
 
-        public string watching1 
-        { get; set; }
-
-        public string watching2 
-        { get; set; }
-
-        public string watching3 
+        public string watching
         { get; set; }
     }
 }
