@@ -5,11 +5,17 @@ namespace ticketing_system_oop
 {
     public class Enhancement : Ticket  {
 
+       
+        
+        public Enhancement() {
+            ElicitTicketInfo elicit = new EnhancementElicit();
+        }
+        
         public string software
         { get; set; }
 
-        public string cost
-        { get; set; }
+        // public string cost
+        // { get; set; }
 
         public string reason
         { get; set; }
