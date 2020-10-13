@@ -6,7 +6,7 @@ namespace ticketing_system_oop
     public abstract class Ticket
     {
         public Ticket() {
-            ElicitTicketInfo elicit;
+            
         }
         
         public string ticketID 

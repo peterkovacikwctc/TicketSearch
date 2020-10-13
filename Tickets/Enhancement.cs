@@ -8,7 +8,7 @@ namespace ticketing_system_oop
        
         
         public Enhancement() {
-            ElicitTicketInfo elicit = new EnhancementElicit();
+            
         }
         
         public string software

@@ -5,11 +5,35 @@ using System.Linq;
 
 namespace ticketing_system_oop
 {
-    public class TicketManager
+    public class EnhancementManager : TicketManager
     {
+        public Enhancement ticket;
+        Display display = new Display();
+
+        public EnhancementManager() {
+            ticket = new Enhancement();
+        }
+        
+        public void readDisplayData(string file) {
+            Console.WriteLine("\nList of Enhancement Tickets\n");
+            StreamReader sr = new StreamReader(file);
+            
+            // skip first line
+            string line = sr.ReadLine();
+            
+            while (!sr.EndOfStream)
+            {
+                //Ticket ticket = new Ticket();
+                line = sr.ReadLine();
+                ticket = readTicketInformation(line);
+                display.displayEnhancementInfo(ticket);
+            }
+            sr.Close();
+        }
+
         public Ticket elicitTicketInformation(string file) {
             
-            Ticket ticket = new Ticket();
+            //Ticket ticket = new BugDefect();
 
             // TicketID
             ticket.ticketID = calculateTicketID(file);
@@ -34,56 +58,60 @@ namespace ticketing_system_oop
             Console.WriteLine("Who is assinged?");
             ticket.assigned = Console.ReadLine();
             
-            // Watching 1
-            Console.WriteLine("Who is the first person watching?");
-            ticket.watching1 = Console.ReadLine();
+            // Watching 
+            Console.WriteLine("Who is watching?");
+            ticket.watching = Console.ReadLine();
             
-            // Watching 2
-            Console.WriteLine("Who is the second person watching?");
-            ticket.watching2 = Console.ReadLine();
-            
-            // Watching 3
-            Console.WriteLine("Who is the third person watching?");
-            ticket.watching3 = Console.ReadLine();
+            // Software
+            Console.WriteLine("What is the software");
+            ticket.software = Console.ReadLine();
+
+             // Reason
+            Console.WriteLine("What is the reason");
+            ticket.reason = Console.ReadLine();
+
+             // Estimate
+            Console.WriteLine("What is the estimate");
+            ticket.estimate = Console.ReadLine();
             
             return ticket;
         }
 
-        public void addTicketToFile(string file, Ticket ticket) {
+        public void addTicketToFile(string file, Enhancement ticket) {
             
             StreamWriter sw = new StreamWriter(file, append: true);
 
             // write line to file
             sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}|{7}|{8}", 
             ticket.ticketID, ticket.summary, ticket.status, ticket.priority, 
-            ticket.submitter, ticket.assigned, ticket.watching1, 
-            ticket.watching2, ticket.watching3);
+            ticket.submitter, ticket.assigned, ticket.watching, 
+            ticket.software, ticket.reason, ticket.estimate);
 
             sw.Close();                     
         }
 
-        public Ticket readTicketInformation(string line) {
+        public Enhancement readTicketInformation(string line) {
             
             // convert line of data from file into array
             string[] ticketElements = line.Split(',', '|');
             
             // make new ticket and give it data
-            Ticket ticket = new Ticket();
+            //Ticket ticket = new Ticket();
             ticket.ticketID = ticketElements[0];
             ticket.summary = ticketElements[1];
             ticket.status = ticketElements[2];
             ticket.priority = ticketElements[3];
             ticket.submitter = ticketElements[4];
             ticket.assigned = ticketElements[5];
-            ticket.watching1 = ticketElements[6];
-            ticket.watching2 = ticketElements[7];
-            ticket.watching3 = ticketElements[8];
-
+            ticket.watching = ticketElements[6];
+            ticket.software = ticketElements[7];
+            ticket.reason = ticketElements[8];
+            ticket.estimate = ticketElements[9];
             return ticket;
         }
 
         // calculate ticket based on highest number ticket already in system
-        private string calculateTicketID(string file) {
+        public string calculateTicketID(string file) {
             
             // make list of ticket IDs
             List<UInt64> ticketIds = new List<UInt64>();

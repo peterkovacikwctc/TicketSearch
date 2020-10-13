@@ -7,12 +7,34 @@ namespace ticketing_system_oop
     {
         static void Main(string[] args)
         {
+            TicketManager ticketManager;
+            string file;
+            
             Display display = new Display();
             display.welcomeMessage();
-
-            TicketManager ticketManager = new TicketManager();
             
-            string file = "Tickets.csv";
+            string ticketChoice;
+            do {
+                display.chooseTicketTypeMessage();
+                ticketChoice = Console.ReadLine();
+
+                if (ticketChoice == "1") {
+                    ticketManager = new BugManager();
+                    file = "Tickets.csv";
+                }
+                else if (ticketChoice == "2") {
+                    ticketManager = new EnhancementManager();
+                    file = "Enhancements.csv";
+                }
+                else if (ticketChoice == "3") {
+                    ticketManager = new TaskManager();
+                    file = "Task.csv";
+                }
+                else
+                    file = "Error!";
+                    ticketManager = new BugManager(); // for initialization
+                    display.errorTicketTypeMessage();
+            } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3");
             string menuChoice;
 
             do
@@ -26,21 +48,22 @@ namespace ticketing_system_oop
                     // read data from file
                     if (File.Exists(file))
                     {
-                        display.ticketListMessage();
+                        ticketManager.readDisplayData(file);
+                        // display.ticketListMessage();
 
-                        StreamReader sr = new StreamReader(file);
+                        // StreamReader sr = new StreamReader(file);
                         
-                        // skip first line
-                        string line = sr.ReadLine();
+                        // // skip first line
+                        // string line = sr.ReadLine();
                         
-                        while (!sr.EndOfStream)
-                        {
-                            Ticket ticket = new Ticket();
-                            line = sr.ReadLine();
-                            ticket = ticketManager.readTicketInformation(line);
-                            display.displayTicketInfo(ticket);
-                        }
-                        sr.Close();
+                        // while (!sr.EndOfStream)
+                        // {
+                        //     //Ticket ticket = new Ticket();
+                        //     line = sr.ReadLine();
+                        //     ticket = ticketManager.readTicketInformation(line);
+                        //     display.displayTicketInfo(ticket);
+                        // }
+                        // sr.Close();
                     }
                     else
                     {
