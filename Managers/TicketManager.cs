@@ -9,12 +9,14 @@ namespace ticketing_system_oop
     {
         public void readDisplayData(string file);
         
-        public Ticket elicitTicketInformation(string file);
+        //public Ticket elicitTicketInformation(string file);
 
-        public void addTicketToFile(string file, Ticket ticket);
+        public void addTicket(string file);
 
-        public Ticket readTicketInformation(string line);
+        //public void writeTicketToFile(string file, Ticket ticket);
+
+        //public Ticket readTicketInformation(string line);
         
-        public string calculateTicketID(string file);
+        //public string calculateTicketID(string file);
     }
 }

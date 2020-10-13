@@ -30,10 +30,11 @@ namespace ticketing_system_oop
                     ticketManager = new TaskManager();
                     file = "Task.csv";
                 }
-                else
+                else {
                     file = "Error!";
                     ticketManager = new BugManager(); // for initialization
                     display.errorTicketTypeMessage();
+                }
             } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3");
             string menuChoice;
 
@@ -83,9 +84,12 @@ namespace ticketing_system_oop
                             // end loop if not adding ticket
                             if (response != "Y") { break; }
 
-                            Ticket ticket = new Ticket();
-                            ticket = ticketManager.elicitTicketInformation(file);
-                            ticketManager.addTicketToFile(file, ticket);
+                            ticketManager.addTicket(file);
+                            //Ticket ticket = new Ticket();
+                            
+                            
+                            //ticket = ticketManager.elicitTicketInformation(file);
+                            //ticketManager.addTicketToFile(file, ticket);
 
                         } while (response == "Y");
                 }

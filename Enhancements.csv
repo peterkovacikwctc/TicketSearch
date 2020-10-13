@@ -1,1 +1,3 @@
 TicketID, Summary, Status, Priority, Submitter, Assigned, Watching, Software, Reason, Estimate
+1,needs upgrade,current,low,Donnie,Nick,Stephanie,Excel,no given reason,500
+2,needs augmentation,on hold,high,Racheal,Steven,Joe,Word,missing features,$5000

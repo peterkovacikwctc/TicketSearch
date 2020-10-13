@@ -30,7 +30,12 @@ namespace ticketing_system_oop
             }
             sr.Close();
         }
-        public Ticket elicitTicketInformation(string file) {
+
+        public void addTicket(string file) {
+             ticket = elicitTicketInformation(file);
+             writeTicketToFile(file, ticket);
+         }
+        private Task elicitTicketInformation(string file) {
             
             //Ticket ticket = new BugDefect();
 
@@ -72,12 +77,12 @@ namespace ticketing_system_oop
             return ticket;
         }
 
-        public void addTicketToFile(string file, Task ticket) {
+        private void writeTicketToFile(string file, Task ticket) {
             
             StreamWriter sw = new StreamWriter(file, append: true);
 
             // write line to file
-            sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}|{7}|{8}", 
+            sw.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8}", 
             ticket.ticketID, ticket.summary, ticket.status, ticket.priority, 
             ticket.submitter, ticket.assigned, ticket.watching, 
             ticket.projectName, ticket.dueDate);
@@ -85,7 +90,7 @@ namespace ticketing_system_oop
             sw.Close();                     
         }
 
-        public Task readTicketInformation(string line) {
+        private Task readTicketInformation(string line) {
             
             // convert line of data from file into array
             string[] ticketElements = line.Split(',', '|');
@@ -98,14 +103,15 @@ namespace ticketing_system_oop
             ticket.priority = ticketElements[3];
             ticket.submitter = ticketElements[4];
             ticket.assigned = ticketElements[5];
-            ticket.projectName = ticketElements[6];
-            ticket.dueDate = ticketElements[7];
+            ticket.watching = ticketElements[6];
+            ticket.projectName = ticketElements[7];
+            ticket.dueDate = ticketElements[8];
             
             return ticket;
         }
 
         // calculate ticket based on highest number ticket already in system
-        public string calculateTicketID(string file) {
+        private string calculateTicketID(string file) {
             
             // make list of ticket IDs
             List<UInt64> ticketIds = new List<UInt64>();
@@ -124,8 +130,13 @@ namespace ticketing_system_oop
             }
             sr.Close();
 
+             UInt64 ticketID;
             // find max ID value in ID list and add 1 to current ticket
-            UInt64 ticketID = ticketIds.Max() + 1;
+            try {
+                ticketID = ticketIds.Max() + 1;
+            } catch {
+                ticketID = 1;
+            }
             return (ticketID.ToString()); 
         }
     }

@@ -5,10 +5,10 @@ namespace ticketing_system_oop
 {
     public class Display
     {
-        public void welcomeMessage() => Console.WriteLine("Welcome to the ticketing system!");
+        public void welcomeMessage() => Console.WriteLine("\nWelcome to the ticketing system!\n");
 
         public void chooseTicketTypeMessage() {
-            Console.WriteLine("Choose Ticket Type: )";
+            Console.WriteLine("Choose Ticket Type: ");
             Console.WriteLine("1) Bug/Defect");
             Console.WriteLine("2) Enhancement");
             Console.WriteLine("3) Task");
