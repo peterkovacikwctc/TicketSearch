@@ -1,3 +1,6 @@
 TicketID, Summary, Status, Priority, Submitter, Assigned, Watching, Severity
 1,important ticket,on hold,medium,Lisa,James,Peter,medium
 2,next ticket,current,high,Andy,Mike,Susan,very
+3,hidden bug,current,high,Henry,Robert,The boss,unknown
+4,broken computer,not working,medium,Homer,Jerry,Mr. Boss man,very severe
+5,network connectivity,on hold,low,Ian,Freddie,Leo,low

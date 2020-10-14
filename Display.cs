@@ -81,7 +81,7 @@ namespace ticketing_system_oop
         }
 
         public void shouldEnterTicket() {
-            Console.WriteLine("\nEnter a ticket (Y/N)?");
+            Console.WriteLine("\nEnter another ticket (Y/N)?");
         }
 
        

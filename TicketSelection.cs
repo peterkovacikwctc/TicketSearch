@@ -8,9 +8,6 @@ namespace ticketing_system_oop
     public class TicketSelection {
 
         Display display = new Display();
-        public TicketSelection() {
-
-        }
 
         public TicketManager determineManager(string ticketChoice) {
             

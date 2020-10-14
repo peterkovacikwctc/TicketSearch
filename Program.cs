@@ -29,6 +29,7 @@ namespace ticketing_system_oop
                 do {
                     display.chooseTicketTypeMessage();
                     ticketChoice = Console.ReadLine();
+                    Console.WriteLine("");
 
                     TicketSelection ticketSelection = new TicketSelection();
                     // determine type of ticket manager
@@ -54,17 +55,21 @@ namespace ticketing_system_oop
                 // add Data to File
                 else if (menuChoice == "2") 
                 {
-                    string response;
+                    string response = "Y";
+                    int i = 0;
                     do 
                     {
-                        display.shouldEnterTicket();
-                        response = Console.ReadLine().ToUpper();
-                        
+                        if (i > 0) {
+                            display.shouldEnterTicket();
+                            response = Console.ReadLine().ToUpper();
+                            Console.WriteLine("");
+                        }
                         // end loop if not adding ticket
                         if (response != "Y") { break; }
 
                         // adds ticket information to respective file
                         ticketManager.addTicket(file);
+                        i++;
                     } while (response == "Y");
                 }
             } while (menuChoice == "1" || menuChoice == "2");
