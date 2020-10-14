@@ -8,6 +8,7 @@ namespace ticketing_system_oop
         public void welcomeMessage() => Console.WriteLine("\nWelcome to the ticketing system!\n");
 
         public void chooseTicketTypeMessage() {
+            Console.WriteLine("");
             Console.WriteLine("Choose Ticket Type: ");
             Console.WriteLine("1) Bug/Defect");
             Console.WriteLine("2) Enhancement");
@@ -15,7 +16,7 @@ namespace ticketing_system_oop
         }
 
         public void menuOptions() {
-            Console.WriteLine("\n1) Read data from file.");
+            Console.WriteLine("1) Read data from file.");
             Console.WriteLine("2) Create or append file from data.");
             Console.WriteLine("Enter any other key to exit.");
         }

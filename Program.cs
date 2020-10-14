@@ -13,25 +13,43 @@ namespace ticketing_system_oop
             Display display = new Display();
             display.welcomeMessage();
             
-            // ask user type of ticket (Bug/Defect, Enhancement, or Task)
-            string ticketChoice;
-            do {
-                display.chooseTicketTypeMessage();
-                ticketChoice = Console.ReadLine();
+            // // ask user type of ticket (Bug/Defect, Enhancement, or Task)
+            // string ticketChoice;
+            // do {
+            //     display.chooseTicketTypeMessage();
+            //     ticketChoice = Console.ReadLine();
 
-                TicketSelection ticketSelection = new TicketSelection();
-                // determine type of ticket manager
-                ticketManager = ticketSelection.determineManager(ticketChoice);
-                // determine filename for that manager 
-                file = ticketSelection.determineFile(ticketChoice);
-            } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3");
+            //     TicketSelection ticketSelection = new TicketSelection();
+            //     // determine type of ticket manager
+            //     ticketManager = ticketSelection.determineManager(ticketChoice);
+            //     // determine filename for that manager 
+            //     file = ticketSelection.determineFile(ticketChoice);
+            // } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3");
             
             string menuChoice;
             do
             {
-               display.menuOptions();
-               menuChoice = Console.ReadLine(); 
+                display.menuOptions();
+                menuChoice = Console.ReadLine();
 
+                if (menuChoice != "1" && menuChoice != "2") {
+                    break;
+                }
+               
+                // ask user type of ticket (Bug/Defect, Enhancement, or Task)
+                string ticketChoice;
+                do {
+                    display.chooseTicketTypeMessage();
+                    ticketChoice = Console.ReadLine();
+
+                    TicketSelection ticketSelection = new TicketSelection();
+                    // determine type of ticket manager
+                    ticketManager = ticketSelection.determineManager(ticketChoice);
+                    // determine filename for that manager 
+                    file = ticketSelection.determineFile(ticketChoice);
+                } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3");
+                
+               
                // read data from file
                if (menuChoice == "1") 
                {
