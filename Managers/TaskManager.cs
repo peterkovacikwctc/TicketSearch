@@ -36,8 +36,6 @@ namespace ticketing_system_oop
              writeTicketToFile(file, ticket);
          }
         private Task elicitTicketInformation(string file) {
-            
-            //Ticket ticket = new BugDefect();
 
             // TicketID
             ticket.ticketID = calculateTicketID(file);
