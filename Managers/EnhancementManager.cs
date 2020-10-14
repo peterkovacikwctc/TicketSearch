@@ -68,15 +68,15 @@ namespace ticketing_system_oop
             ticket.watching = Console.ReadLine();
             
             // Software
-            Console.WriteLine("What is the software");
+            Console.WriteLine("What is the software?");
             ticket.software = Console.ReadLine();
 
              // Reason
-            Console.WriteLine("What is the reason");
+            Console.WriteLine("What is the reason?");
             ticket.reason = Console.ReadLine();
 
              // Estimate
-            Console.WriteLine("What is the estimate");
+            Console.WriteLine("What is the estimate?");
             ticket.estimate = Console.ReadLine();
             
             return ticket;

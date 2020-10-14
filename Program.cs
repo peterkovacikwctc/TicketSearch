@@ -13,31 +13,20 @@ namespace ticketing_system_oop
             Display display = new Display();
             display.welcomeMessage();
             
+            // ask user type of ticket (Bug/Defect, Enhancement, or Task)
             string ticketChoice;
             do {
                 display.chooseTicketTypeMessage();
                 ticketChoice = Console.ReadLine();
 
-                if (ticketChoice == "1") {
-                    ticketManager = new BugManager();
-                    file = "Tickets.csv";
-                }
-                else if (ticketChoice == "2") {
-                    ticketManager = new EnhancementManager();
-                    file = "Enhancements.csv";
-                }
-                else if (ticketChoice == "3") {
-                    ticketManager = new TaskManager();
-                    file = "Task.csv";
-                }
-                else {
-                    file = "Error!";
-                    ticketManager = new BugManager(); // for initialization
-                    display.errorTicketTypeMessage();
-                }
+                TicketSelection ticketSelection = new TicketSelection();
+                // determine type of ticket manager
+                ticketManager = ticketSelection.determineManager(ticketChoice);
+                // determine filename for that manager 
+                file = ticketSelection.determineFile(ticketChoice);
             } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3");
+            
             string menuChoice;
-
             do
             {
                display.menuOptions();
@@ -50,21 +39,6 @@ namespace ticketing_system_oop
                     if (File.Exists(file))
                     {
                         ticketManager.readDisplayData(file);
-                        // display.ticketListMessage();
-
-                        // StreamReader sr = new StreamReader(file);
-                        
-                        // // skip first line
-                        // string line = sr.ReadLine();
-                        
-                        // while (!sr.EndOfStream)
-                        // {
-                        //     //Ticket ticket = new Ticket();
-                        //     line = sr.ReadLine();
-                        //     ticket = ticketManager.readTicketInformation(line);
-                        //     display.displayTicketInfo(ticket);
-                        // }
-                        // sr.Close();
                     }
                     else
                     {
@@ -85,12 +59,6 @@ namespace ticketing_system_oop
                             if (response != "Y") { break; }
 
                             ticketManager.addTicket(file);
-                            //Ticket ticket = new Ticket();
-                            
-                            
-                            //ticket = ticketManager.elicitTicketInformation(file);
-                            //ticketManager.addTicketToFile(file, ticket);
-
                         } while (response == "Y");
                 }
             } while (menuChoice == "1" || menuChoice == "2");
