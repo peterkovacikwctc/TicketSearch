@@ -5,9 +5,6 @@ namespace ticketing_system_oop
 {
     public class Task  : Ticket  {
 
-        public Task() {
-           
-        }
         public string projectName
         { get; set; }
 

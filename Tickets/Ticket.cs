@@ -5,10 +5,6 @@ namespace ticketing_system_oop
 {
     public abstract class Ticket
     {
-        public Ticket() {
-            
-        }
-        
         public string ticketID 
         { get; set; }
 

@@ -13,25 +13,13 @@ namespace ticketing_system_oop
             Display display = new Display();
             display.welcomeMessage();
             
-            // // ask user type of ticket (Bug/Defect, Enhancement, or Task)
-            // string ticketChoice;
-            // do {
-            //     display.chooseTicketTypeMessage();
-            //     ticketChoice = Console.ReadLine();
-
-            //     TicketSelection ticketSelection = new TicketSelection();
-            //     // determine type of ticket manager
-            //     ticketManager = ticketSelection.determineManager(ticketChoice);
-            //     // determine filename for that manager 
-            //     file = ticketSelection.determineFile(ticketChoice);
-            // } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3");
-            
             string menuChoice;
             do
             {
                 display.menuOptions();
                 menuChoice = Console.ReadLine();
 
+                // does not ask for type of ticket if ending the program
                 if (menuChoice != "1" && menuChoice != "2") {
                     break;
                 }
@@ -47,13 +35,12 @@ namespace ticketing_system_oop
                     ticketManager = ticketSelection.determineManager(ticketChoice);
                     // determine filename for that manager 
                     file = ticketSelection.determineFile(ticketChoice);
-                } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3");
+                } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3"); // 3 valid choices corresponding to ticket types
                 
                
                // read data from file
                if (menuChoice == "1") 
                {
-                    // read data from file
                     if (File.Exists(file))
                     {
                         ticketManager.readDisplayData(file);
@@ -68,16 +55,17 @@ namespace ticketing_system_oop
                 else if (menuChoice == "2") 
                 {
                     string response;
-                        do 
-                        {
-                            display.shouldEnterTicket();
-                            response = Console.ReadLine().ToUpper();
-                            
-                            // end loop if not adding ticket
-                            if (response != "Y") { break; }
+                    do 
+                    {
+                        display.shouldEnterTicket();
+                        response = Console.ReadLine().ToUpper();
+                        
+                        // end loop if not adding ticket
+                        if (response != "Y") { break; }
 
-                            ticketManager.addTicket(file);
-                        } while (response == "Y");
+                        // adds ticket information to respective file
+                        ticketManager.addTicket(file);
+                    } while (response == "Y");
                 }
             } while (menuChoice == "1" || menuChoice == "2");
 
