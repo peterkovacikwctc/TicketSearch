@@ -7,8 +7,10 @@ namespace ticketing_system_oop
     {
         static void Main(string[] args)
         {
-            TicketManager ticketManager;
-            string file;
+            TicketManager ticketManager; // different manager for each ticket type (BugManager, EnhancementManager, TaskManager)
+            // used to manage differences in ticket types and their corresponding methods
+
+            string file; // name for .csv file
             
             Display display = new Display();
             display.welcomeMessage();
@@ -16,7 +18,7 @@ namespace ticketing_system_oop
             string menuChoice;
             do
             {
-                display.menuOptions();
+                display.menuOptions(); // 1) read file, 2) add to file, or end program
                 menuChoice = Console.ReadLine();
 
                 // does not ask for type of ticket if ending the program
@@ -24,18 +26,22 @@ namespace ticketing_system_oop
                     break;
                 }
                
-                // ask user type of ticket (Bug/Defect, Enhancement, or Task)
                 string ticketChoice;
                 do {
+                    // ask user type of ticket (Bug/Defect, Enhancement, or Task)
                     display.chooseTicketTypeMessage();
                     ticketChoice = Console.ReadLine();
                     Console.WriteLine("");
 
-                    TicketSelection ticketSelection = new TicketSelection();
-                    // determine type of ticket manager
+                    // ticket selection determines manager type and file name
+                    TicketSelection ticketSelection = new TicketSelection(); 
+                    
+                    // determine type of ticket manager (BugManager, EnhancementManager, TaskManager)
                     ticketManager = ticketSelection.determineManager(ticketChoice);
-                    // determine filename for that manager 
+                    
+                    // determine file name based on ticket type 
                     file = ticketSelection.determineFile(ticketChoice);
+
                 } while (ticketChoice != "1" && ticketChoice != "2" && ticketChoice != "3"); // 3 valid choices corresponding to ticket types
                 
                
@@ -44,7 +50,7 @@ namespace ticketing_system_oop
                {
                     if (File.Exists(file))
                     {
-                        ticketManager.readDisplayData(file);
+                        ticketManager.readDisplayData(file); // read and display data from file
                     }
                     else
                     {
@@ -69,7 +75,7 @@ namespace ticketing_system_oop
                         // end loop if not adding ticket
                         if (response != "Y") { break; }
 
-                        // adds ticket information to respective file
+                        // adds ticket information to file
                         ticketManager.addTicket(file);
 
                         i++; // counter to see if user already entered ticket (i > 0)
