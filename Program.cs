@@ -59,17 +59,20 @@ namespace ticketing_system_oop
                     int i = 0;
                     do 
                     {
+                        // if user already entered ticket, ask if user wants to enter another ticket
                         if (i > 0) {
                             display.shouldEnterTicket();
                             response = Console.ReadLine().ToUpper();
                             Console.WriteLine("");
                         }
+                        
                         // end loop if not adding ticket
                         if (response != "Y") { break; }
 
                         // adds ticket information to respective file
                         ticketManager.addTicket(file);
-                        i++;
+
+                        i++; // counter to see if user already entered ticket (i > 0)
                     } while (response == "Y");
                 }
             } while (menuChoice == "1" || menuChoice == "2");
