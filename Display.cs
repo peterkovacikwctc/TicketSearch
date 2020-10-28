@@ -84,5 +84,13 @@ namespace ticketing_system_oop
         public void shouldEnterTicket() {
             Console.WriteLine("\nEnter another ticket (Y/N)?");
         }
+
+        public void ticketSearchChoice() {
+            Console.WriteLine("\nSearch tickets by - ");
+            Console.WriteLine("1) status");
+            Console.WriteLine("2) priority");
+            Console.WriteLine("3) submitter ");
+            Console.WriteLine("\nEnter choice:");
+        }
     }
 }

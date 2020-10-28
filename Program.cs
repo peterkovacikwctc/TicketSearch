@@ -18,11 +18,11 @@ namespace ticketing_system_oop
             string menuChoice;
             do
             {
-                display.menuOptions(); // 1) read file, 2) add to file, or end program
+                display.menuOptions(); // 1) read file, 2) add to file, 3) search tickets or end program
                 menuChoice = Console.ReadLine();
 
-                // does not ask for type of ticket if ending the program
-                if (menuChoice != "1" && menuChoice != "2") {
+                // breaks loop if ending the program
+                if (menuChoice != "1" && menuChoice != "2"  && menuChoice != "3") {
                     break;
                 }
                
@@ -80,6 +80,23 @@ namespace ticketing_system_oop
 
                         i++; // counter to see if user already entered ticket (i > 0)
                     } while (response == "Y");
+                }
+
+                // search tickets
+                else if (menuChoice == "3")
+                {
+                    SearchTickets searchTickets = new SearchTickets();
+                    
+                    // determine search type: status, priority, or submitter
+                    display.ticketSearchChoice();
+                    string searchChoice = Console.ReadLine();
+                    Console.WriteLine("");
+                    string searchType;
+                    searchType = searchTickets.determineSearchType(searchChoice);
+
+                    for (int i = 0; i < 3; i++) {
+                        //
+                    }
                 }
             } while (menuChoice == "1" || menuChoice == "2");
 
