@@ -137,5 +137,42 @@ namespace ticketing_system_oop
             }
             return (ticketID.ToString()); 
         }
+
+        public List<Ticket> makeTicketList(string file) {
+            List<Ticket> taskList = new List<Ticket>();
+            Ticket genericTicket;
+            StreamReader sr = new StreamReader(file);
+            
+            // skip first line
+            string line = sr.ReadLine();
+            
+            while (!sr.EndOfStream)
+            {
+                //Ticket ticket = new Ticket();
+                line = sr.ReadLine();
+                genericTicket = readGenericTicketInformation(line);
+                taskList.Add(genericTicket);
+            }
+            sr.Close();
+
+            return taskList;
+        }
+
+        private Ticket readGenericTicketInformation(string line) {
+            
+            // convert line of data from file into array
+            string[] ticketElements = line.Split(',', '|');
+            
+            // make new generic ticket and give it data
+            ticket.ticketID = ticketElements[0];
+            ticket.summary = ticketElements[1];
+            ticket.status = ticketElements[2];
+            ticket.priority = ticketElements[3];
+            ticket.submitter = ticketElements[4];
+            ticket.assigned = ticketElements[5];
+            ticket.watching = ticketElements[6];
+            
+            return ticket;
+        }
     }
 }

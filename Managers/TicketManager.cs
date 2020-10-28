@@ -11,5 +11,7 @@ namespace ticketing_system_oop
         
         public void addTicket(string file);
 
+        public List<Ticket> makeTicketList(string file);
+
     }
 }

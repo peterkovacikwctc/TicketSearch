@@ -2,6 +2,8 @@
 using NLog.Web;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
+
 
 namespace ticketing_system_oop
 {
@@ -13,8 +15,19 @@ namespace ticketing_system_oop
             TicketManager ticketManager; // different manager for each ticket type (BugManager, EnhancementManager, TaskManager)
             // used to manage differences in ticket types and their corresponding methods
 
+            // specifc managers needed to create lists and search for tickets
+            BugManager bugManager = new BugManager();
+            EnhancementManager enhancementManager = new EnhancementManager();
+            TaskManager taskManager = new TaskManager();
+
             string file; // name for .csv file
             
+            //specific file names
+            string bugFile = "Tickets.csv";
+            string enhancementFile = "Enhancments.csv";
+            string taskFile = "Task.csv"; 
+
+
             Display display = new Display();
             display.welcomeMessage();
             
@@ -96,24 +109,24 @@ namespace ticketing_system_oop
                     display.ticketSearchChoice();
                     string searchChoice = Console.ReadLine();
                     Console.WriteLine("");
-                    string searchType;
-                    searchType = searchTickets.determineSearchType(searchChoice);
+                    string searchProperty;
+                    searchProperty = searchTickets.determineSearchType(searchChoice);
 
-                    // make list of Bug tickets
-                    // make list of Enhancment tickets
-                    // make list of Task tickets
+                    // make lists of all ticket types
+                    List<Ticket> bugList = bugManager.makeTicketList(bugFile);
+                    List<Ticket> enhancementList = enhancementManager.makeTicketList(enhancementFile);
+                    List<Ticket> taskList = taskManager.makeTicketList(taskFile);
+                    
+                    // append lists into a single list
+                    List<Ticket> ticketList = bugList.Concat(enhancementList).Concat(taskList).ToList();
 
                     // convert searchType to element number
                     // for example: status --> element [2], ex: bugDefect[2] 
                     // priority --> element [3], ex: enhancment[3]
                     // submitter --> element [4], ex: task[4]
 
-
-                    for (int i = 0; i < 3; i++) {
-                        // each iteration goes through different list of tickets
-                        // use Linq to search through list and then
-                        // display results and number of matches
-                    }
+                    // use Linq to search through list and then display results and number of matches
+                    
                 }
             } while (menuChoice == "1" || menuChoice == "2");
 
