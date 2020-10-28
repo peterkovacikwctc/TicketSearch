@@ -99,8 +99,20 @@ namespace ticketing_system_oop
                     string searchType;
                     searchType = searchTickets.determineSearchType(searchChoice);
 
+                    // make list of Bug tickets
+                    // make list of Enhancment tickets
+                    // make list of Task tickets
+
+                    // convert searchType to element number
+                    // for example: status --> element [2], ex: bugDefect[2] 
+                    // priority --> element [3], ex: enhancment[3]
+                    // submitter --> element [4], ex: task[4]
+
+
                     for (int i = 0; i < 3; i++) {
-                        //
+                        // each iteration goes through different list of tickets
+                        // use Linq to search through list and then
+                        // display results and number of matches
                     }
                 }
             } while (menuChoice == "1" || menuChoice == "2");

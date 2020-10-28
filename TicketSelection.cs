@@ -13,7 +13,7 @@ namespace ticketing_system_oop
         public string determineTicketChoice() {
             display.chooseTicketTypeMessage();
             string ticketChoice = Console.ReadLine();
-            //Console.WriteLine("");
+            Console.WriteLine("");
             return ticketChoice;
         }
         
