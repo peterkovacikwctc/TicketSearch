@@ -103,6 +103,10 @@ namespace ticketing_system_oop
                 else if (menuChoice == "3")
                 {
                     
+                    Console.WriteLine("Enter text to search: ");
+                    string text = Console.ReadLine();
+                    Console.WriteLine("");
+                    
                     SearchTickets searchTickets = new SearchTickets();
                     
                     // determine search type: status, priority, or submitter
@@ -120,12 +124,28 @@ namespace ticketing_system_oop
                     // append lists into a single list
                     List<Ticket> ticketList = bugList.Concat(enhancementList).Concat(taskList).ToList();
 
-                    // convert searchType to element number
-                    // for example: status --> element [2], ex: bugDefect[2] 
-                    // priority --> element [3], ex: enhancment[3]
-                    // submitter --> element [4], ex: task[4]
-
+                    // change display color in terminal
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    
                     // use Linq to search through list and then display results and number of matches
+                        switch(searchProperty) 
+                        {
+                        case "status":
+                            searchTickets.displayStatusSearch(ticketList, searchProperty, text);
+                            break;
+                        case "priority":
+                            searchTickets.displayPrioritySearch(ticketList, searchProperty, text);
+                            break;
+                        case "submitter":
+                            searchTickets.displaySubmitterSearch(ticketList, searchProperty, text);
+                            break;
+                        default:
+                            Console.WriteLine("Error!");
+                            break;
+                        } 
+
+                    // change display color back to white
+                    Console.ForegroundColor = ConsoleColor.White;
                     
                 }
             } while (menuChoice == "1" || menuChoice == "2");
