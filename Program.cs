@@ -148,7 +148,7 @@ namespace ticketing_system_oop
                     Console.ForegroundColor = ConsoleColor.White;
                     
                 }
-            } while (menuChoice == "1" || menuChoice == "2");
+            } while (menuChoice == "1" || menuChoice == "2" || menuChoice == "3");
 
             display.exitMessage();
         }
