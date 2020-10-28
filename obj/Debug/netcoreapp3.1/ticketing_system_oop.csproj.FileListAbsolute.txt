@@ -24,3 +24,7 @@ C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\tic
 C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.dll
 C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.pdb
 C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.genruntimeconfig.cache
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.csproj.CopyComplete

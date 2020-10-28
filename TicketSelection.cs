@@ -9,6 +9,14 @@ namespace ticketing_system_oop
 
         Display display = new Display();
 
+        
+        public string determineTicketChoice() {
+            display.chooseTicketTypeMessage();
+            string ticketChoice = Console.ReadLine();
+            //Console.WriteLine("");
+            return ticketChoice;
+        }
+        
         public TicketManager determineManager(string ticketChoice) {
             
             TicketManager ticketManager;
