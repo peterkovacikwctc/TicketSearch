@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Peter Kovacik\\Documents\\DOTNET_projects\\ticketing_system_oop\\ticketing_system_oop.csproj",
+      "projectUniqueName": "C:\\Users\\Peter Kovacik\\Documents\\DOTNET\\TicketSearch\\ticketing_system_oop.csproj",
       "projectName": "ticketing_system_oop",
-      "projectPath": "C:\\Users\\Peter Kovacik\\Documents\\DOTNET_projects\\ticketing_system_oop\\ticketing_system_oop.csproj",
+      "projectPath": "C:\\Users\\Peter Kovacik\\Documents\\DOTNET\\TicketSearch\\ticketing_system_oop.csproj",
       "packagesPath": "C:\\Users\\Peter Kovacik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Peter Kovacik\\Documents\\DOTNET_projects\\ticketing_system_oop\\obj\\",
+      "outputPath": "C:\\Users\\Peter Kovacik\\Documents\\DOTNET\\TicketSearch\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Peter Kovacik\\AppData\\Roaming\\NuGet\\NuGet.Config",

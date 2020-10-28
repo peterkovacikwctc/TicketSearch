@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IuVr1KFgBfbO2HVIooGgq8Kkbquka+Fmvg7Cgqi8VFx7IieCRBHSN39gxD+vHGWfKdH0flPTK9DnQUh4C5H8CQ==",
+  "dgSpecHash": "WvTu+gyEAcjRhk6Mqa0LanW8HTYLLgkBqIsD01aDpqumpPydjxkPIPxgCRcYnrEHlNC1+O59VDooptqRsuwewQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Peter Kovacik\\Documents\\DOTNET_projects\\ticketing_system_oop\\ticketing_system_oop.csproj",
+  "projectFilePath": "C:\\Users\\Peter Kovacik\\Documents\\DOTNET\\TicketSearch\\ticketing_system_oop.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

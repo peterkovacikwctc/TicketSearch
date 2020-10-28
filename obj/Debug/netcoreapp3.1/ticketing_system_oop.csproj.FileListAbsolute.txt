@@ -11,3 +11,16 @@ C:\Users\Peter Kovacik\Documents\DOTNET_projects\ticketing_system_oop\obj\Debug\
 C:\Users\Peter Kovacik\Documents\DOTNET_projects\ticketing_system_oop\obj\Debug\netcoreapp3.1\ticketing_system_oop.dll
 C:\Users\Peter Kovacik\Documents\DOTNET_projects\ticketing_system_oop\obj\Debug\netcoreapp3.1\ticketing_system_oop.pdb
 C:\Users\Peter Kovacik\Documents\DOTNET_projects\ticketing_system_oop\obj\Debug\netcoreapp3.1\ticketing_system_oop.genruntimeconfig.cache
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\bin\Debug\netcoreapp3.1\ticketing_system_oop.exe
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\bin\Debug\netcoreapp3.1\ticketing_system_oop.deps.json
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\bin\Debug\netcoreapp3.1\ticketing_system_oop.runtimeconfig.json
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\bin\Debug\netcoreapp3.1\ticketing_system_oop.runtimeconfig.dev.json
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\bin\Debug\netcoreapp3.1\ticketing_system_oop.dll
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\bin\Debug\netcoreapp3.1\ticketing_system_oop.pdb
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.csprojAssemblyReference.cache
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.AssemblyInfoInputs.cache
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.AssemblyInfo.cs
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.csproj.CoreCompileInputs.cache
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.dll
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.pdb
+C:\Users\Peter Kovacik\Documents\DOTNET\TicketSearch\obj\Debug\netcoreapp3.1\ticketing_system_oop.genruntimeconfig.cache
