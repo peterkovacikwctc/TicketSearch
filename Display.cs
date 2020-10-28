@@ -18,7 +18,7 @@ namespace ticketing_system_oop
         public void menuOptions() {
             Console.WriteLine("1) Read data from file.");
             Console.WriteLine("2) Create or append file from data.");
-            Console.WriteLine("Enter 3 to search movie titles.");
+            Console.WriteLine("3) Search tickets.");
             Console.WriteLine("Enter anything else to quit.");
         }
 
