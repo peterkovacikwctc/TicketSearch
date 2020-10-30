@@ -24,7 +24,7 @@ namespace ticketing_system_oop
             
             //specific file names
             string bugFile = "Tickets.csv";
-            string enhancementFile = "Enhancments.csv";
+            string enhancementFile = "Enhancements.csv";
             string taskFile = "Task.csv"; 
 
 
@@ -146,6 +146,7 @@ namespace ticketing_system_oop
 
                     // change display color back to white
                     Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("");
                     
                 }
             } while (menuChoice == "1" || menuChoice == "2" || menuChoice == "3");
