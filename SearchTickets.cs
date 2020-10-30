@@ -35,12 +35,13 @@ namespace ticketing_system_oop
                     var ticketMatches = ticketList.Where(t => t.status.Contains(text));
                     foreach(Ticket t in ticketMatches)
                     {
-                        Console.WriteLine($"  {t.status}");
+                        //Console.WriteLine($"Ticket number: {t.ticketID}");
+                        Console.WriteLine($"Status: {t.status}");
                     } 
 
                     // display number of matches
                     var numberMatches = ticketList.Where(t => t.status.Contains(text)).Count();
-                    Console.WriteLine($"There are {numberMatches} tickets with \"{text}\" in the property {searchProperty} title.");  
+                    Console.WriteLine($"There are {numberMatches} tickets with \"{text}\" in the property \"{searchProperty}\".\n");  
         }
 
         public void displayPrioritySearch(List<Ticket> ticketList, string searchProperty, string text) {
@@ -48,12 +49,12 @@ namespace ticketing_system_oop
                     var ticketMatches = ticketList.Where(t => t.priority.Contains(text));
                     foreach(Ticket t in ticketMatches)
                     {
-                        Console.WriteLine($"  {t.priority}");
+                        Console.WriteLine($"Priority: {t.priority}");
                     } 
 
                     // display number of matches
                     var numberMatches = ticketList.Where(t => t.priority.Contains(text)).Count();
-                    Console.WriteLine($"There are {numberMatches} tickets with \"{text}\" in the property {searchProperty} title.");  
+                    Console.WriteLine($"There are {numberMatches} tickets with \"{text}\" in the property \"{searchProperty}\".\n");  
         }
 
         public void displaySubmitterSearch(List<Ticket> ticketList, string searchProperty, string text) {
@@ -61,12 +62,12 @@ namespace ticketing_system_oop
                     var ticketMatches = ticketList.Where(t => t.submitter.Contains(text));
                     foreach(Ticket t in ticketMatches)
                     {
-                        Console.WriteLine($"  {t.submitter}");
+                        Console.WriteLine($"Submitter: {t.submitter}");
                     } 
 
                     // display number of matches
                     var numberMatches = ticketList.Where(t => t.submitter.Contains(text)).Count();
-                    Console.WriteLine($"There are {numberMatches} tickets with \"{text}\" in the property {searchProperty} title.");  
+                    Console.WriteLine($"There are {numberMatches} tickets with \"{text}\" in the property \"{searchProperty}\".\n");  
         }
     }
 }
