@@ -9,7 +9,6 @@ namespace ticketing_system_oop
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
             TicketManager ticketManager; // different manager for each ticket type (BugManager, EnhancementManager, TaskManager)
@@ -123,6 +122,16 @@ namespace ticketing_system_oop
                     
                     // append lists into a single list
                     List<Ticket> ticketList = bugList.Concat(enhancementList).Concat(taskList).ToList();
+                   
+                    
+                    /*
+                    // test number of tickets to see that they are all in the list
+                    int number = 1;
+                    foreach (var ticket in ticketList) {
+                        Console.WriteLine($"ticket list: {number}");
+                        number++;
+                    }
+                    */
 
                     // change display color in terminal
                     Console.ForegroundColor = ConsoleColor.Green;
